@@ -13,9 +13,9 @@ import java.util.ArrayList;
  *4) 1 in LogAnylayzer, 1 in analyzeData and 2 in PrintHourly
  *5)int[] counts; occupied = new boolean[5000];
  *6) reading = new double[60]; urls = new String[90] ; machines = new TicketMachine[5];
- *7) 20, 50
- *8) done
- *
+ *7) 20
+ *8) prices = new double[50]
+ *9) done
  *
  */
 public class LogAnalyzer
@@ -63,11 +63,19 @@ public class LogAnalyzer
     public void printHourlyCounts()
     {
         System.out.println("Hr: Count");
-        for(int hour = 0; hour <= hourCounts.length; hour++) {
+        for(int hour = 0; hour < hourCounts.length; hour++) {
             System.out.println(hour + ": " + hourCounts[hour]);
         }
     }
-    
+    /**
+     * A dupe of printHourlCounts()
+     */
+    public void printHourlyCounts2(){
+        System.out.println("Hr: Count");
+        //while(hourCounts.length == ){
+            
+        //}
+    }
     /**
      * Print the lines of data read by the LogfileReader
      */
