@@ -16,7 +16,11 @@ import java.util.ArrayList;
  *7) 20
  *8) prices = new double[50]
  *9) done
- *
+ *10)done
+ *11)Done
+ *12)done
+ *13)done
+ *14)
  */
 public class LogAnalyzer
 {
@@ -32,16 +36,25 @@ public class LogAnalyzer
     /**
      * Create an object to analyze hourly web accesses.
      */
-    public LogAnalyzer()
+    public LogAnalyzer(String filename)
     { 
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
         // Create the reader to obtain the data.
-        reader = new LogfileReader();
+        reader = new LogfileReader(filename);
     }
     
     
+    
+    public void printGreater(double mean) {
+       double marks[] = {1,3,6,4,6};
+       for (int index =0; index < marks.length; index++){
+           if(marks[index] > mean){
+               System.out.println(marks[index]);
+            }
+        }
+    }
     
     /**
      * Analyze the hourly access data from the log file.
@@ -67,15 +80,31 @@ public class LogAnalyzer
             System.out.println(hour + ": " + hourCounts[hour]);
         }
     }
+    
+    /** 
+    * Return the number of accesses recorded in the log file. 
+    */
+    public int numberOfAccesses() {
+        int total = 0;
+        for(int count : hourCounts){ 
+            total += count;
+        }
+        // Add the value in each element of hourCounts to // total. ...
+        return total;
+    
+    }     
+    
     /**
      * A dupe of printHourlCounts()
      */
     public void printHourlyCounts2(){
         System.out.println("Hr: Count");
-        //while(hourCounts.length == ){
-            
-        //}
+        int hour = 0;
+        while(hourCounts.length > hour ){
+            System.out.println(hour + ": " + hourCounts[hour]);
+        }
     }
+    
     /**
      * Print the lines of data read by the LogfileReader
      */

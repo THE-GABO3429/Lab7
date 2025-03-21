@@ -140,6 +140,7 @@ public class LogfileReader implements Iterator<LogEntry>
     {
         for(LogEntry entry : entries) {
             System.out.println(entry);
+            //System.out.println();
         }
     }
 
